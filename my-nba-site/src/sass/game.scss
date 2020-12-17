@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+$oswald: 'Oswald', sans-serif;
+
+.gameScore {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gameCard {
+    width: 350px;
+    border-radius: 10px;
+    padding: 2%;
+    box-shadow: 0 2px 20px 0 #FBD786;
+    background: white;
+    margin: 2% 0 0 0;
+    font-family: $oswald;
+}
+
+.gameCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2% 10%;
+}
+
+.teamImages {
+    display: flex;
+}
+
+.homeContainer {
+}
+
+h1 {
+    font-family: $oswald;
+    color: white;
+}
+
+.nextBtn, .prevBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: $oswald;
+    &:focus {
+        outline: none;
+    }
+}
+
+.nextBtn {
+    color: #f7797d;
+}
+
+.prevBtn {
+    color:  #C6FFDD;
+}
