@@ -7,24 +7,48 @@ $oswald: 'Oswald', sans-serif;
 }
 
 .gameCard {
+    display: inline-block;
     width: 350px;
     border-radius: 10px;
     padding: 2%;
     box-shadow: 0 2px 20px 0 #FBD786;
     background: white;
-    margin: 2% 0 0 0;
     font-family: $oswald;
+    cursor: pointer;
+    margin: 0 2%;
 }
 
 .gameCardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 2% 10%;
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
+    margin: 5% 0 2% 0;
+    height: 350px;
+    white-space: nowrap;
 }
+
+.gameCardContainer::-webkit-scrollbar {
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+.gameCardContainer::-webkit-scrollbar-thumb {
+    background: darken(#f7797d, 10%);
+    box-shadow: inset 0 0 5px lighten(#f7797d, 10%); 
+    border-radius: 10px;
+}
+  
 
 .teamImages {
     display: flex;
+    img {
+        user-drag: none; 
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
 }
 
 .homeContainer {
@@ -53,4 +77,8 @@ h1 {
 
 .prevBtn {
     color:  #C6FFDD;
+}
+
+.active {
+    cursor: grabbing;
 }
