@@ -10,8 +10,8 @@ const Home = () => {
     // provides the horizontal coordinate within the application viewport at which the event occurred (current view of window)
     const [clickStartX, setClickStartX] = useState();
     const [scrollStartX, setScrollStartX] = useState();
+    // set reference of DOM to this variable
     const drag = useRef(null);
-    const dragCurrent = drag.current;
 
     useEffect(() => {
         fetch('https://www.balldontlie.io/api/v1/games/?start_date=2020-12-01&end_date=2020-12-01')
@@ -21,18 +21,20 @@ const Home = () => {
         })
         }, [])
 
+        // start of scroll
         const onMouseDown = (e) => {
             setClickStartX(e.screenX);
-            setScrollStartX(drag.current.scrollLeft)
+            // returns number of pixels the div is scrolled to the left
+            setScrollStartX(drag.current.scrollLeft);
         }
-    
+        // end of scroll
         const onMouseUp = (e) => {
             if(clickStartX !== undefined) {
                 setClickStartX(undefined);
                 setScrollStartX(undefined);
             }
         }
-    
+        // handles the movement of scroll
         const onMouseMove = (e) => {
             if(clickStartX !== undefined && scrollStartX !== undefined) {
                 const touchDelta = clickStartX - e.screenX;
